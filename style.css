@@ -1,5 +1,42 @@
+@media (max-width: 768px) {
+    .sound-icon {
+        top: 12px;
+        left: 12px;
+    }
+}
 body {
     background-image: url(https://asecs.se/wp-content/themes/a6center-redesign/library/images/space-bg.gif);
+}
+nav {
+    text-align: center;
+}
+nav a {
+    padding: 0 1rem;
+    font-size: xx-large;
+}
+.sound-icon {
+    width: 30px;
+    height: 28px;
+    display: block;
+    background-image: url(https://i.annihil.us/u/prod/marvel/movies/captain-marvel/2/assets/images/home/soundBtn.png);
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 99999;
+}
+.sound-icon:hover {
+    background-position-y: bottom;
+}
+.sound-icon.muted:hover {
+    background-position-y: bottom;
+}
+.sound-icon.muted {
+    background-position-x: right;
 }
 
 
@@ -14,6 +51,9 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-size: cover;
     background-position: center;
+}
+p {
+    color: blueviolet;
 }
 .banner {
     width: 400px;

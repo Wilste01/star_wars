@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>90s Star Wars</title>
+    <title>GIF Reaktionsgenerator</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="scripts.js">
 </head>
 <body>
-    <div id="main-container">
-        <header>
-            <h1 class="title">Welcome to the 90s Star Wars Extravaganza!</h1>
-            <nav>
-                <ul>
-                    <li><a href="#section1">The Force</a></li>
-                    <li><a href="#section2">Lightsaber Game</a></li>
-                    <li><a href="#section3">Gallery</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="section1">
-                <h2>About the Force</h2>
-                <p class="description">A long time ago in a galaxy far, far away... the Force binds everything together!</p>
-                <div class="force-animation"></div>
-            </section>
+    <div class="container">
+        <h1>GIF Reaktionsgenerator</h1>
 
-            <section id="section2">
-                <h2>Lightsaber Game</h2>
-                <p>Click the lightsaber to activate it and win the duel!</p>
-                <div id="game-container">
-                    <button id="lightsaber-button">Activate Lightsaber</button>
-                    <div id="lightsaber"></div>
-                </div>
-            </section>
+        <label for="situation">Välj en situation:</label>
+        <select id="situation">
+            <option value="När jag får lön">När jag får lön</option>
+            <option value="När jag är trött">När jag är trött</option>
+            <option value="När jag hittar något jag tappat">När jag hittar något jag tappat</option>
+            <option value="När jag träffar min idol">När jag träffar min idol</option>
+            <option value="När jag ser en bra film">När jag ser en bra film</option>
+            <option value="När jag vinner på lotto">När jag vinner på lotto</option>
+            <option value="När jag får en komplimang">När jag får en komplimang</option>
+            <option value="När någon säger något roligt">När någon säger något roligt</option>
+            <option value="När jag är glad">När jag är glad</option>
+            <option value="När någon berättar en skvallerhistoria">När någon berättar en skvallerhistoria</option>
+            <option value="När jag får en överraskning">När jag får en överraskning</option>
+            <option value="När jag äter min favoritmat">När jag äter min favoritmat</option>
+            <option value="När jag hör min favoritlåt">När jag hör min favoritlåt</option>
+            <option value="När jag ser något sött">När jag ser något sött</option>
+        </select>
 
-            <section id="section3">
-                <h2>Star Wars Gallery</h2>
-                <div class="gallery">
-                    <img src="images/space.jpg" alt="Star Wars Space">
-                    <img src="images/lightsaber.jpg" alt="Lightsaber">
-                    <img src="images/darth-vader.jpg" alt="Darth Vader">
-                </div>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2024 90s Star Wars Fan Page</p>
-        </footer>
+        <button id="getGifBtn">Hämta GIF</button>
+
+        <div id="gifContainer"></div>
+
+        <div id="historySection">
+            <h3>Historik</h3>
+            <ul id="historyList"></ul>
+        </div>
+
+        <div id="shareSection">
+            <button id="copyBtn">Kopiera GIF-länk</button>
+            <button id="shareFacebook">Dela på Facebook</button>
+            <button id="shareTwitter">Dela på Twitter</button>
+        </div>
+
+        <label for="dramaMode">Aktivera Drama Mode:</label>
+        <input type="checkbox" id="dramaMode">
+
+        <button id="clearHistoryBtn">Rensa historik</button>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>

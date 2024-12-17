@@ -1,130 +1,93 @@
+/* Grundläggande styling */
 body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    background: linear-gradient(to bottom, #000000, #1a1a1a);
-    color: #00ff00;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-}
-
-header {
-    background-color: #000080;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 4px solid #00ff00;
-}
-
-.title {
-    font-size: 3rem;
-    text-shadow: 2px 2px 5px #ff00ff;
-    animation: colorCycle 5s infinite;
-}
-
-nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+select, button, input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#gifContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#gifContainer img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+#historySection {
+    margin-top: 20px;
+}
+
+#historyList {
+    list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffff00;
-    font-size: 1.2rem;
-    transition: transform 0.3s;
-}
-
-nav ul li a:hover {
-    transform: scale(1.2);
-    color: #ff0000;
-}
-
-section {
-    padding: 40px;
-    text-align: center;
-    border: 2px dashed #00ff00;
-    margin: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.force-animation {
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
-    background: radial-gradient(circle, #ff0000, #000000);
-    animation: pulsate 2s infinite;
-}
-
-#game-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-#lightsaber-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #ff0000;
-    color: #ffffff;
-    border: none;
+#historyList li {
+    padding: 8px;
+    background-color: #fafafa;
+    margin-bottom: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    animation: buttonBlink 1.5s infinite alternate;
 }
 
-#lightsaber {
-    width: 10px;
-    height: 0;
-    background-color: #00ff00;
-    margin: 20px auto;
-    transition: height 0.3s;
+#historyList li:hover {
+    background-color: #f0f0f0;
 }
 
-.gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+#shareSection button {
+    background-color: #0078D4;
+    margin-top: 10px;
 }
 
-.gallery img {
-    width: 150px;
-    height: auto;
-    border: 3px solid #ff00ff;
-    box-shadow: 0 0 10px #00ff00;
-    transform: rotate(5deg);
-    transition: transform 0.3s;
+#shareSection button:hover {
+    background-color: #005fa3;
 }
 
-.gallery img:hover {
-    transform: rotate(-5deg) scale(1.2);
+/* Drama Mode */
+input[type="checkbox"] {
+    transform: scale(1.2);
 }
 
-footer {
-    background-color: #000080;
-    text-align: center;
-    color: #ffffff;
-    padding: 10px;
-}
-
-@keyframes colorCycle {
-    0% { color: #00ff00; }
-    25% { color: #ff0000; }
-    50% { color: #0000ff; }
-    75% { color: #ffff00; }
-    100% { color: #00ff00; }
-}
-
-@keyframes pulsate {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.5); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.8; }
-}
-
-@keyframes buttonBlink {
-    0% { background-color: #ff0000; }
-    50% { background-color: #ffff00; }
-    100% { background-color: #00ff00; }
+input[type="checkbox"]:checked {
+    background-color: red;
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90s Star Wars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scripts.js">
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <h1 class="title">Welcome to the 90s Star Wars Extravaganza!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#section1">The Force</a></li>
+                    <li><a href="#section2">Lightsaber Game</a></li>
+                    <li><a href="#section3">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="section1">
+                <h2>About the Force</h2>
+                <p class="description">A long time ago in a galaxy far, far away... the Force binds everything together!</p>
+                <div class="force-animation"></div>
+            </section>
+
+            <section id="section2">
+                <h2>Lightsaber Game</h2>
+                <p>Click the lightsaber to activate it and win the duel!</p>
+                <div id="game-container">
+                    <button id="lightsaber-button">Activate Lightsaber</button>
+                    <div id="lightsaber"></div>
+                </div>
+            </section>
+
+            <section id="section3">
+                <h2>Star Wars Gallery</h2>
+                <div class="gallery">
+                    <img src="images/space.jpg" alt="Star Wars Space">
+                    <img src="images/lightsaber.jpg" alt="Lightsaber">
+                    <img src="images/darth-vader.jpg" alt="Darth Vader">
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 90s Star Wars Fan Page</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

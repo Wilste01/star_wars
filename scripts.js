@@ -1,3 +1,21 @@
+const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+const app = express();
+
+app.use('/api', createProxyMiddleware({
+    target: 'https://api.tenor.com',
+    changeOrigin: true,
+    pathRewrite: {
+        '^/api': '', // Ta bort /api från sökvägen
+    },
+}));
+
+app.listen(3000, () => {
+    console.log('Proxy server running on port 3000');
+});
+
+const proxyUrl = 'http://localhost:3000/api/v1/search?q=';
 const API_Key = "AIzaSyAM_c6Z1X52ppG7lHFPr87mr-oHpY09bjQ";
 let history = JSON.parse(localStorage.getItem('gifHistory')) || [];
 
@@ -6,7 +24,7 @@ document.getElementById('getGifBtn').addEventListener('click', function() {
     const situation = document.getElementById('situation').value;
     const dramaMode = document.getElementById('dramaMode').checked;
 
-    fetch(`https://api.tenor.com/v1/search?q=${encodeURIComponent(situation)}&key=${API_Key}&limit=1`)
+    fetch(`${proxyUrl}${encodeURIComponent(situation)}&key=${API_Key}&limit=1`)
         .then(response => response.json())
         .then(data => {
             const gifUrl = data.results[0].media[0].gif.url;

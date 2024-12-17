@@ -1,22 +1,5 @@
-const express = require('express');
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
-const app = express();
-
-app.use('/api', createProxyMiddleware({
-    target: 'https://api.tenor.com',
-    changeOrigin: true,
-    pathRewrite: {
-        '^/api': '', // Ta bort /api från sökvägen
-    },
-}));
-
-app.listen(3000, () => {
-    console.log('Proxy server running on port 3000');
-});
-
 const proxyUrl = 'http://localhost:3000/api/v1/search?q=';
-const API_Key = "AIzaSyAM_c6Z1X52ppG7lHFPr87mr-oHpY09bjQ";
+const API_Key = "LIVDSRZULELA"; // Använd den API-nyckel som fungerar med curl
 let history = JSON.parse(localStorage.getItem('gifHistory')) || [];
 
 // Hämta GIF från Tenor baserat på användarens val
@@ -48,7 +31,6 @@ function displayGif(gifUrl, dramaMode) {
 function saveToHistory(gifUrl, situation) {
     history.push({ gifUrl, situation });
     localStorage.setItem('gifHistory', JSON.stringify(history));
-    updateHistory();
 }
 
 // Uppdatera historiklistan

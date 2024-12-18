@@ -1,5 +1,5 @@
 const proxyUrl = 'http://localhost:3000/api/v1/search?q=';
-const API_Key = "LIVDSRZULELA"; // Använd den API-nyckel som fungerar med curl
+
 let history = JSON.parse(localStorage.getItem('gifHistory')) || [];
 
 // Hämta GIF från Tenor baserat på användarens val
